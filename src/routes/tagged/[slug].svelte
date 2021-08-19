@@ -5,7 +5,7 @@
 				method: 'POST',
 				body: JSON.stringify({
 					query: `query {
-                    PostItems(per_page: 5) {
+                    PostItems(per_page: 10, with_tag: "${page.params.slug}") {
                      items {
                         content {
                             intro
@@ -29,7 +29,8 @@
 		).json();
 		return {
 			props: {
-				data: json.data
+				data: json.data,
+				tag: page.params.slug
 			}
 		};
 	}
@@ -38,11 +39,10 @@
 <script>
 	import StoryCard from '$lib/components/card.svelte';
 	export let data;
+	export let tag;
 </script>
 
-<svelte:head>
-	<title>SyntaxHighlight - news and tutorials for developers</title>
-</svelte:head>
+<h1 class="font-sans font-bold text-center text-4xl md:text-6xl">Tag: {tag}</h1>
 <div class="m-auto grid w-3/4 gap-5 md:grid-cols-3 lg:grid-cols-4">
 	{#each data.PostItems.items as item}
 		<StoryCard {item} />

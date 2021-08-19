@@ -6,3 +6,4 @@ node_modules
 /workers-site
 wrangler.toml
 .env
+stats.html

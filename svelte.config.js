@@ -1,5 +1,7 @@
 import preprocess from 'svelte-preprocess';
 import WindiCSS from 'vite-plugin-windicss';
+import { visualizer } from 'rollup-plugin-visualizer';
+import node from '@sveltejs/adapter-node';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
@@ -7,7 +9,7 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		// hydrate the <div id="svelte"> element in src/app.html
+		adapter: node(),
 		target: '#svelte',
 		vite: {
 			plugins: [
@@ -16,6 +18,9 @@ const config = {
 						dirs: ['src'],
 						fileExtensions: ['svelte']
 					}
+				}),
+				visualizer({
+					title: 'SyntaxHighlight bundle makeup'
 				})
 			]
 		}
