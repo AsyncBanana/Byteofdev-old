@@ -1,7 +1,7 @@
 import preprocess from 'svelte-preprocess';
 import WindiCSS from 'vite-plugin-windicss';
 import { visualizer } from 'rollup-plugin-visualizer';
-import node from '@sveltejs/adapter-node';
+import node from '@sveltejs/adapter-cloudflare-workers';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
@@ -20,7 +20,7 @@ const config = {
 					}
 				}),
 				visualizer({
-					title: 'SyntaxHighlight bundle makeup'
+					title: 'ByteofDev bundle makeup'
 				})
 			]
 		}

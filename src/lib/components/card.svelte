@@ -6,7 +6,7 @@
 </script>
 
 <a class="rounded-md bg-base-100 p-4" href={`/posts/${item.slug}`}>
-	<img src={item.content.image} alt="Article header" />
+	<img src={item.content.image} alt="Article header" class="rounded-md"/>
 	<h1 class="font-bold text-xl">{item.content.title}</h1>
 	<h3>{item.content.intro}</h3>
 	<h4>By {item.content.author.name}</h4>
