@@ -42,13 +42,17 @@
 
 <svelte:head>
 	<title>ByteofDev - bite sizes articles for developers</title>
-	<meta name="description" content="ByteofDev - bite sizes articles for developers" />
-	<meta name="canonical" content={`https://byteofdev.com`} />
+	<meta name="title" content="ByteofDev - bite sizes articles for developers" />
+	<meta
+		name="description"
+		content="ByteofDev is a blog and newsletter for developers across many different groups, offering tutorials, ecosystem roundups, tool comparisons, and more."
+	/>
+	<meta name="canonical" content="https://byteofdev.com" />
 	<meta property="og:title" content="ByteofDev - bite sized articles for developers" />
 	<meta property="og:type" content="website" />
-	<meta name="og:url" content="https://byteofdev.com/" />
-	<meta property="og:site_name" value="byteofdev.com" />
-	<meta property="og:image" content="/ByteofDevFrame.png" />
+	<meta name="og:url" content="https://byteofdev.com" />
+	<meta property="og:site_name" value="ByteofDev" />
+	<meta property="og:image" content="https://byteofdev.com/ByteofDevFrame.png" />
 </svelte:head>
 <h1 class="font-bold font-sans text-center text-4xl">ByteofDev</h1>
 <h2 class="text-center italic ">Bite sizes articles for developers</h2>

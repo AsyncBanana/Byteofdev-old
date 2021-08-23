@@ -1,4 +1,5 @@
 <script context="module">
+	import { STORYBLOK_KEY } from '$lib/modules/env';
 	export async function load({ page, fetch, session, context }) {
 		const json = await (
 			await fetch(`https://gapi.storyblok.com/v1/api`, {
@@ -22,7 +23,7 @@
                 }`
 				}),
 				headers: {
-					token: import.meta.env.VITE_STORYBLOK_KEY,
+					token: STORYBLOK_KEY,
 					version: 'published'
 				}
 			})
@@ -42,6 +43,9 @@
 	export let tag;
 </script>
 
+<svelte:head>
+	<title>Stories tagged {tag} - Byteofdev</title>
+</svelte:head>
 <h1 class="font-sans font-bold text-center text-4xl md:text-6xl">Tag: {tag}</h1>
 <div class="m-auto grid w-3/4 gap-5 md:grid-cols-3 lg:grid-cols-4">
 	{#each data.PostItems.items as item}

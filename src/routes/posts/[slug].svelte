@@ -1,13 +1,14 @@
 <script context="module">
 	import storyblokClient from 'storyblok-js-client';
+	import { STORYBLOK_KEY } from '$lib/modules/env';
 	const storyblok = new storyblokClient({
 		// @ts-ignore
-		accessToken: import.meta.env.VITE_STORYBLOK_KEY
+		accessToken: STORYBLOK_KEY
 	});
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
-	export async function load({ page, fetch, session, context }) {
+	export async function load({ page, fetch }) {
 		const json = await (
 			await fetch(`https://gapi.storyblok.com/v1/api`, {
 				method: 'POST',
@@ -30,7 +31,7 @@
                 }`
 				}),
 				headers: {
-					token: import.meta.env.VITE_STORYBLOK_KEY,
+					token: STORYBLOK_KEY,
 					version: 'published'
 				}
 			})
@@ -82,7 +83,7 @@
 	<meta property="article:published_time" content={story.first_published_at} />
 	<meta property="article:author" content={story.content.author.name} />
 	<meta property="article:modified_time" content={story.published_at} />
-	<meta property="og:site_name" value="byteofdev.com" />
+	<meta property="og:site_name" value="ByteofDev" />
 	{#if story.content.image}
 		<meta property="og:image" content={story.content.image} />
 	{/if}

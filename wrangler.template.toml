@@ -6,6 +6,6 @@ zone_id = ''                                         # use for custom domain
 usage_model = 'bundled'
 compatibility_flags = []
 workers_dev = true                                   # enable to use the workers.dev domain
-site = { bucket = "", entry-point = "workers-site" }
+site = { bucket = "./build", entry-point = "./workers-site" }
 [build]
 command = "npm i -g pnpm && pnpm i && pnpm build"
