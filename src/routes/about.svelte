@@ -12,6 +12,7 @@
 	<meta name="og:type" content="website" />
 	<meta name="og:url" content="https://byteofdev.com/about" />
 	<meta property="og:site_name" value="ByteofDev" />
+	<meta property="twitter:card" content="summary_large_image" />
 </svelte:head>
 <div class="m-auto w-3/5">
 	<h1 class="font-bold text-center mb-6 text-5xl">About</h1>

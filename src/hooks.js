@@ -11,7 +11,6 @@ const directives = {
 /** @type {import('@sveltejs/kit').GetSession} */
 export const getSession = async (request) => {
 	const cookies = cookie.parse(request.headers.cookie || 'theme={}');
-
 	return {
 		theme: JSON.parse(cookies.theme)
 	};

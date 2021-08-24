@@ -53,6 +53,7 @@
 	<meta name="og:url" content="https://byteofdev.com" />
 	<meta property="og:site_name" value="ByteofDev" />
 	<meta property="og:image" content="https://byteofdev.com/ByteofDevFrame.png" />
+	<meta property="twitter:card" content="summary_large_image" />
 </svelte:head>
 <h1 class="font-bold font-sans text-center text-4xl">ByteofDev</h1>
 <h2 class="text-center italic ">Bite sizes articles for developers</h2>

@@ -86,6 +86,7 @@
 	<meta property="og:site_name" value="ByteofDev" />
 	{#if story.content.image}
 		<meta property="og:image" content={story.content.image} />
+		<meta property="twitter:card" content="summary_large_image" />
 	{/if}
 </svelte:head>
 <div class="mt-1/2 max-w-1/5 p-6 top-1/3 sticky float-left hidden lg:block">

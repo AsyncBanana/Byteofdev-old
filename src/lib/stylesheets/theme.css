@@ -1,7 +1,7 @@
 * {
 	@apply font-sans;
 }
-.dark {
+body.dark {
 	--p: 259 94% 61%;
 	--pf: 259 94.4% 51.2%;
 	--pc: 0 0% 100%;
@@ -26,7 +26,7 @@
 .drawer {
 	color: hsla(var(--bc) / var(--tw-text-opacity, 1));
 }
-.light {
+body.light {
 	--p: 259 94.4% 51.2%;
 	--pf: 259 94.3% 41%;
 	--pc: 0 0% 100%;

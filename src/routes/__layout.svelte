@@ -7,11 +7,15 @@
 	import nprogress from 'nprogress';
 	import 'nprogress/nprogress.css';
 	import { onDestroy } from 'svelte';
+	import { browser } from '$app/env';
 	let theme = { value: null, override: false };
 	const subscriptions = [
 		session.subscribe((val) => {
-			theme = val.theme;
-			cookie.set('theme', JSON.stringify(val.theme), { sameSite: 'strict' });
+			if (val.override) {
+				theme = val.theme;
+
+				cookie.set('theme', JSON.stringify(val.theme), { sameSite: 'strict' });
+			}
 		}),
 		mediaStore.subscribe((val: Record<string, unknown>) => {
 			if (!theme.override) {
@@ -30,11 +34,12 @@
 	onDestroy(() => {
 		subscriptions.forEach((val) => val());
 	});
+	if (browser) {
+		console.log(document.querySelectorAll('.light'));
+	}
 </script>
 
 <svelte:head>
-	<meta name="HandheldFriendly" content="True" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
 	<link
@@ -56,6 +61,7 @@
 			<button
 				on:click={() => {
 					session.update((value) => {
+						console.log('toggle');
 						value.theme.value = theme.value === 'light' ? 'dark' : 'light';
 						value.theme.override = true;
 						return value;
