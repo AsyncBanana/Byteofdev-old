@@ -9,8 +9,7 @@ export default defineConfig({
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
-				serif: ['Quattrocento', 'system-ui', 'serif']
+				sans: ['Inter', 'Verdana', 'Geneva', 'Tahoma', 'sans-serif']
 			}
 		}
 	}

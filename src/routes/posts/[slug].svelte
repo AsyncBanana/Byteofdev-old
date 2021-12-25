@@ -185,21 +185,17 @@ TODO -->
 </div>
 
 <style lang="postcss">
-	:global(article) {
-		font-family: 'Quattrocento', system-ui, serif;
-	}
 	:global(article :is(h1, h2, h3, h4, h5, h6)) {
-		font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
 		@apply font-bold;
 	}
 	:global(article a) {
-		@apply underline-blue-500 underline;
+		@apply underline underline-blue-500;
 	}
 	:global(article a:visited) {
 		@apply underline-purple-600;
 	}
 	:global(article h1) {
-		@apply text-4xl p-1 border-b-gray-400 border-b-2 border-opacity-25 mb-2;
+		@apply border-b-gray-400 border-b-2 border-opacity-25 mb-2 p-1 text-4xl;
 	}
 	:global(article h2) {
 		@apply text-2xl;
